@@ -1,0 +1,156 @@
+\documentclass[a4j,10pt]{jsarticle}
+\usepackage{layout,url,resume}
+\usepackage[dvipdfmx]{graphicx}
+\pagestyle{empty}
+
+\begin{document}
+%\layout
+
+\title{ Laplacian in Cylindrical coordinate system}
+
+% 和文著者名
+\author{
+    parton \thanks{aqua}
+}
+
+% 和文概要
+%\begin{abstract}
+%\end{abstract}
+
+\maketitle
+\thispagestyle{empty}
+
+\section{Laplacian}
+Cartesian coordinates are given as $(X, Y, Z)$.
+
+In this system,  laplacian is defined as
+$$\Delta f = \frac{\partial ^ 2 f}{\partial X^2} + \frac{\partial ^ 2 f}{\partial Y^2} + \frac{\partial ^ 2 f}{\partial Z^2}$$
+
+\section{Cylindrical coordinate system}
+Cylindrical coordinates are given as $(r, \theta, z)$.
+\subsection{mapping}
+Cartesian coordinates and cylindrical coordinates are mapped as follows
+\begin{eqnarray}
+X &=& r\cos \theta \\
+Y &=& r\sin \theta \\
+Z &=&z 
+\end{eqnarray}
+By using this definition, 
+\begin{eqnarray}
+r  &=& {(X^2 + Y^2)}^\frac{1}{2} \\
+\theta &=& \tan^-1 \frac{Y}{X} \\
+z  &=& Z 
+\end{eqnarray}
+
+
+\subsection{Preparation}
+By (4), 
+\begin{equation}
+\frac{\partial r}{\partial X} = \frac{\partial}{\partial X} {(X^2 + Y^2)}^\frac{1}{2}\\ 
+=  X{(X^2 + Y^2)}^-\frac{1}{2}\\
+=\cos \theta \\
+\end{equation}
+\begin{equation}
+\frac{\partial r}{\partial X} = \frac{\partial}{\partial Y} {(X^2 + Y^2)}^\frac{1}{2}\\ 
+=  Y{(X^2 + Y^2)}^-\frac{1}{2}\\
+=\sin \theta \\
+\end{equation}
+\begin{equation}
+\frac{\partial r}{\partial X} = \frac{\partial}{\partial Z} {(X^2 + Y^2)}^\frac{1}{2} = 0 
+\end{equation}
+
+By (5)\footnote{$$\frac{\partial }{\partial u} \tan ^ {-1} u = \frac{1}{1+u^2} $$}, 
+\begin{equation}
+\frac{\partial \theta}{\partial X} = \frac{\partial}{\partial X} \tan ^ {-1} \frac{Y}{X} \\
+= -\frac{Y}{X^2 + Y^2}\\
+= - \frac{1}{r}\sin\theta
+\end{equation}
+
+\begin{equation}
+\frac{\partial \theta}{\partial Y} = \frac{\partial}{\partial Y} \tan ^ {-1} \frac{Y}{X} \\
+= \frac{Y}{X^2 + Y^2}\\
+= \frac{1}{r}\cos \theta
+\end{equation}
+
+\begin{equation}
+\frac{\partial \theta}{\partial Z} = \frac{\partial}{\partial Z} \tan ^ {-1} \frac{Y}{X} \\
+= 0
+\end{equation}
+
+By (6), 
+\begin{equation}
+\frac{\partial z}{\partial X}  = 0
+\end{equation}
+\begin{equation}
+\frac{\partial z}{\partial Y}  = 0
+\end{equation}
+\begin{equation}
+\frac{\partial z}{\partial Z}  = 1
+\end{equation}
+
+\section{function in cylindrical coordinate system}
+Let $f$ be a function in cylindrical coordinate system.
+$$f = (r, \theta,  z)$$
+Cylindrical coordinate system can be regarded as a function of orthogonal coordinates\footnote{(4),(5), and (6)}. Therefore, function $f$ can be regarded as a composite function.
+\begin{equation}
+f(r(X, Y, Z), \theta(X, Y, Z), z(X, Y, Z))
+\end{equation}
+Partially differentiate equation (16) with X, Y, Z. 
+
+\begin{equation}
+\frac{\partial f}{\partial X}=\frac{\partial r}{\partial X} \frac{\partial f}{\partial r}+\frac{\partial \theta}{\partial X} \frac{\partial f}{\partial \theta}+\frac{\partial z}{\partial X} \frac{\partial f}{\partial z}
+\end{equation}
+\begin{equation}
+\frac{\partial f}{\partial Y}=\frac{\partial r}{\partial Y} \frac{\partial f}{\partial r}+\frac{\partial \theta}{\partial Y} \frac{\partial f}{\partial \theta}+\frac{\partial z}{\partial Y} \frac{\partial f}{\partial z}
+\end{equation}
+\begin{equation}
+\frac{\partial f}{\partial Z}=\frac{\partial r}{\partial Z} \frac{\partial f}{\partial r}+\frac{\partial \theta}{\partial Z} \frac{\partial f}{\partial \theta}+\frac{\partial z}{\partial Z} \frac{\partial f}{\partial z}
+\end{equation}
+Then,
+\begin{eqnarray*}
+&\frac{\partial^2 f}{\partial X^2} =\frac{\partial}{\partial X}\frac{\partial f}{\partial X} \\
+&=\frac{\partial r}{\partial X}\frac{\partial}{\partial r}\frac{\partial f}{\partial X} + \frac{\partial \theta}{\partial X}\frac{\partial}{\partial \theta}\frac{\partial f}{\partial X} + \frac{\partial z}{\partial X}\frac{\partial}{\partial z}\frac{\partial f}{\partial X} \\
+&= \frac{\partial r}{\partial X}\frac{\partial}{\partial r}(17) +\frac{\partial \theta}{\partial X}\frac{\partial}{\partial \theta}(17) + \frac{\partial z}{\partial X}\frac{\partial}{\partial z}(17)
+\end{eqnarray*}
+
+\begin{eqnarray*}
+&\frac{\partial^2 f}{\partial Y^2} =\frac{\partial}{\partial Y}\frac{\partial f}{\partial Y} \\
+&=\frac{\partial r}{\partial Y}\frac{\partial}{\partial r}\frac{\partial f}{\partial Y} + \frac{\partial \theta}{\partial Y}\frac{\partial}{\partial \theta}\frac{\partial f}{\partial Y} + \frac{\partial z}{\partial Y}\frac{\partial}{\partial z}\frac{\partial f}{\partial Y} \\
+&= \frac{\partial r}{\partial Y}\frac{\partial}{\partial r}(18) +\frac{\partial \theta}{\partial Y}\frac{\partial}{\partial \theta}(18) + \frac{\partial z}{\partial Y}\frac{\partial}{\partial z}(18)
+\end{eqnarray*}
+
+\begin{eqnarray*}
+&\frac{\partial^2 f}{\partial Z^2} =\frac{\partial}{\partial Z}\frac{\partial f}{\partial Z} \\
+&=\frac{\partial r}{\partial Z}\frac{\partial}{\partial r}\frac{\partial f}{\partial Z} + \frac{\partial \theta}{\partial Z}\frac{\partial}{\partial \theta}\frac{\partial f}{\partial Z} + \frac{\partial z}{\partial Z}\frac{\partial}{\partial z}\frac{\partial f}{\partial Z} \\
+&= \frac{\partial r}{\partial Z}\frac{\partial}{\partial r}(19) +\frac{\partial \theta}{\partial Z}\frac{\partial}{\partial \theta}(19) + \frac{\partial z}{\partial Z}\frac{\partial}{\partial z}(19)
+\end{eqnarray*}
+
+Using these equations, laplacian  is
+\begin{eqnarray*}
+&\Delta f = \frac{\partial^2 f}{\partial Z^2} \\ 
+&= \frac{\partial r}{\partial X}\frac{\partial}{\partial r}(17) +\frac{\partial \theta}{\partial X}\frac{\partial}{\partial \theta}(17) + \frac{\partial z}{\partial X}\frac{\partial}{\partial z}(17) \\
+& + \frac{\partial r}{\partial Y}\frac{\partial}{\partial r}(18) +\frac{\partial \theta}{\partial Y}\frac{\partial}{\partial \theta}(18) + \frac{\partial z}{\partial Y}\frac{\partial}{\partial z}(18) \\
+&  + \frac{\partial r}{\partial Z}\frac{\partial}{\partial r}(19) +\frac{\partial \theta}{\partial Z}\frac{\partial}{\partial \theta}(19) + \frac{\partial z}{\partial Z}\frac{\partial}{\partial z}(19)
+\end{eqnarray*}
+
+Substitute (7)〜(15) to this equation and got 
+\begin{eqnarray*}
+&\Delta f = \cos \theta \frac{\partial}{\partial r} (\cos \theta \frac{\partial f}{\partial r} - \frac{1}{r}\sin \frac{\partial f}{\partial \theta})\\
+&-\frac{1}{r}\sin\theta \frac{\partial}{\partial \theta} (\cos\theta \frac{\partial f}{\partial r} - \frac{1}{r}\sin\theta \frac{\partial f}{\partial \theta})\\
+&+\sin \theta \frac{\partial}{\partial r} (\sin \theta \frac{\partial f}{\partial r} + \frac{1}{r}\cos \theta \frac{\partial f}{\partial \theta} )\\
+&+\frac{1}{r}\cos \theta \frac{\partial}{\partial \theta} (\sin \theta \frac{\partial f}{\partial r} + \frac{1}{r}\cos\theta \frac{\partial f}{\partial \theta}) \\
+&+ \frac{\partial}{\partial z} (\frac{\partial f}{\partial z})
+\end{eqnarray*}
+Transform the equation 
+\begin{equation}
+\Delta f = \frac{1}{r}\frac{\partial }{\partial r}(r \frac{\partial f}{\partial r})+\frac{1}{r^2}\frac{\partial ^2 f}{\partial \theta^2} + \frac{\partial ^2 f}{\partial z^2}
+\end{equation}
+
+\section{参考}
+埼玉工業大学 機械工学学習セミナー(小西克享) テーマB27 ラプラシアンの直交座標から円柱座標への座標変換(2016)
+
+\bibliographystyle{junsrt}
+\bibliography{resume}
+
+\end{document}
+% end of file
